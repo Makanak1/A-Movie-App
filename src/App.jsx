@@ -4,7 +4,10 @@ import MovieCard from "./MovieCard";
 // import SearchIcon from "./search.svg";
 import "./App.css";
 
-const API_URL = "http://www.omdbapi.com?apikey=b6003d8a";
+//add api key in .env file
+//and access it here
+// import.meta.env.VITE_API_KEY
+const API_URL = `http://www.omdbapi.com?apikey=${import.meta.env.VITE_API_KEY}`;
 
 //added some comments
 
@@ -13,7 +16,7 @@ const App = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    searchMovies("Batman");
+    searchMovies("");
   }, []);
 
   const searchMovies = async (title) => {
